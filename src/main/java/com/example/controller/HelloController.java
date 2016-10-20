@@ -22,4 +22,18 @@ public class HelloController {
 	public String index() {
 		return GREET;
 	}
+	
+	public void testNonBlocker(){
+		try{
+			List<String> list = new ArrayList<String>();
+			Integer integer = Integer.valueOf(1);
+
+			if (list.contains(integer)) { // Noncompliant. Always false.
+				list.remove(integer); // Noncompliant. list.add(iger) doesn't compile, so this will always return false
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return;
+	}	
 }
