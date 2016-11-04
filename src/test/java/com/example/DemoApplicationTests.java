@@ -13,6 +13,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.example.controller.HelloController;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
 public class DemoApplicationTests {
@@ -31,4 +33,10 @@ public class DemoApplicationTests {
 	public void newSimpleTest() throws Exception {
 		mockMvc.perform(get("/").contentType("application/json")).andExpect(status().isOk());
 	}
+    @Test
+	public void newSuperSimpleTest() throws Exception {
+		HelloController c = new HelloController();
+		c.testNonBlocker();
+	}
+
 }
