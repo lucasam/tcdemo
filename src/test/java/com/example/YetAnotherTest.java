@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.Date;
 import org.junit.Test;
 
 /**
@@ -8,7 +9,8 @@ import org.junit.Test;
 public class YetAnotherTest {
     @Test
     public void dummy2() throws Exception {
+        System.out.println(new Date() + " Dummy2 test executing");
         Thread.sleep(5000);
-        System.out.println("Dummy2 test executed");
+        System.out.println(new Date() + " Dummy2 test executed");
     }
 }
